@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc report</title>
+    <style>
+ body{
+  background-color: rgb(255, 136, 0);
+  
+ }
+ .app-form{
+  border-radius: 2px;
+  background-color: rgb(221, 190, 15);
+  width: 100%;
+  height: 70%;
+  border-radius: 5px;
+  text-align: center;
+
+  
+
+ }
+ .app-form-group{
+  padding: 0.4%;
+ text-align: center;
+  margin: 1%;
+
+ }
+ 
+
+    </style>
+</head>
+<body>
+  
+    <div class="app-form">
+        <div class="app-form-group">
+            <input type="text" class="app-form-control" placeholder="web programming" id="wd">
+          </div>
+          <div class="app-form-group">
+            <input type="text" class="app-form-control" placeholder="Android" id="Android">
+          </div>
+          <div class="app-form-group">
+            <input type="text" class="app-form-control" placeholder="java" id="java">
+          </div>
+          <div class="app-form-group">
+            <input type="text" class="app-form-control" placeholder="python" id="python">
+          </div>
+          <div class="app-form-group">
+            <input type="text" class="app-form-control" placeholder="php" id="php">
+          </div>
+          <div class="app-form-group">
+            <input type="button" name="" value="showPercentage" class="app-form-control" onclick="calcy() ">
+          </div>
+          </div>
+    </div>
+  
+    <div class="app-form-group showdata">
+        <p id="showData"></p>
+
+    </div>
+    <script>
+      const calcy = () =>{
+        let wd = document.getElementById('wd').value;
+        let Android = document.getElementById('Android').value;
+        let java = document.getElementById('java').value;
+        let python = document.getElementById('python').value;
+        let php = document.getElementById('php').value;
+        let grades = "";
+
+
+        let totalGrades = parseFloat(wd) +parseFloat (Android) +parseFloat (java) +parseFloat(python) +parseFloat (php);
+      alert(totalGrades);    
+    
+      let perc = (totalGrades/500)*100;
+      alert(perc);
+      if(perc <= 100 && perc >= 80){
+        grades = 'A';}
+        else if(perc <= 79 && perc >= 60){
+          grades = 'B';
+        }
+          else if(perc <= 59 && perc >= 40){
+          grades ='C';
+        }else { 
+          grades = 'F';
+        }
+        if(perc >= 39.5){
+          document.getElementById('showData').innerHTML = `out of 500 your total is
+         ${totalGrades}and percentage is ${perc}%. <br> your grade is ${grades}. you are pass. `}
+         else{
+          document.getElementById('showData').innerHTML = `out of 500 your total is
+         ${totalGrades}and percentage is ${perc}%. <br> your grade is ${grades}. you are fail. `}
+    }
+    </script>
+</body>
+</html>
